@@ -1,4 +1,4 @@
-from flask import Flask,render_template,g, request
+from flask import Flask,render_template,g, request, url_for,redirect
 import sqlite3
 
 app = Flask(__name__)
@@ -34,7 +34,19 @@ def database_entries():
     entries = cursor.fetchall
     return render_template('database_entries.html', entries=entries)
 
+@app.route("/database/create", methods=["GET", "POST"])
+def create():
+    if request.method == "POST":
+        title = request.form["title"]
+        content = request.form["content"]
+        date = request.form["date"]
 
+        db = get_db()
+        cursor = db.cursor()
+        cursor.execute("INSERT INTO database (title, content, date) VALUES (?,?,?)", (title, content, date))
+        db.commit()
+        return redirect(url_for("database_entries"))
+    return render_template("create.html")
 
 if __name__ == '__main__':
     init_db()
