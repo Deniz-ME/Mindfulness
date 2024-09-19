@@ -1,4 +1,4 @@
-from flask import Flask,g
+from flask import Flask,render_template,g
 import sqlite3
 
 app = Flask(__name__)
@@ -15,15 +15,16 @@ def init_db():
         db = get_db()
         cursor = db.cursor()
         cursor.execute('''CREATE TABLE IF NOT EXISTS database(
-                            id INTEGER PRIMARY KEY AUTOINCREMENT,
+                            id INTEGER PRIMARY KEY,
                             title TEXT NOT NULL,
                             content TEXT NOT NULL,
                             date TEXT NOT NULL
                            )''')
         db.commit()
 
-
-
+@app.route('/')
+def home():
+    return render_template('home.html')
 
 if __name__ == '__main__':
     init_db()
