@@ -9,10 +9,11 @@
             <h2>{{ entry[1] }}</h2>
             <p>{{ entry[2] }}</p>
             <small>{{ entry[3] }}</small>
+            <a href="{{ url_for('update', id=entry[0]) }}">Edit</a>
         </li>
         {% endfor %}
     </ul>
 {% else %}
-    <p>No diary entries found.</p>
+    <p>No diary entries found. <a href="{{ url_for('create') }}">Create one here</a>.</p>
 {% endif %}
 {% endblock %}

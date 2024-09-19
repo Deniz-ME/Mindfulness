@@ -48,6 +48,24 @@ def create():
         return redirect(url_for("database_entries"))
     return render_template("create.html")
 
+@app.route("/database/update/<int:id>", methods=["GET", "POST"])
+def update(id):
+    db = get_db()
+    cursor = db.cursor()
+
+    if request.method == "POST":
+        title = request.form["title"]
+        content = request.form["content"]
+        date = request.form["date"]
+        cursor.execute("UPDATE database SET title = ?, content = ?, date = ? WHERE id = ?", (title, content, date, id))
+        db.commit()
+        return redirect(url_for("database_entries"))
+    
+    cursor.execute("SELECT * FROM database WHERE id = ?", (id,))
+    entry = cursor.fetchone()
+    return render_template("update.html", entry = entry)
+
+
 if __name__ == '__main__':
     init_db()
     app.run(debug=True)
