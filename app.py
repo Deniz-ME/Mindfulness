@@ -1,4 +1,4 @@
-from flask import Flask,render_template,g
+from flask import Flask,render_template,g, request
 import sqlite3
 
 app = Flask(__name__)
@@ -25,6 +25,16 @@ def init_db():
 @app.route('/')
 def home():
     return render_template('home.html')
+
+@app.route('/database', methods=['GET'])
+def database_entries():
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM database")
+    entries = cursor.fetchall
+    return render_template('database_entries.html', entries=entries)
+
+
 
 if __name__ == '__main__':
     init_db()
