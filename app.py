@@ -31,7 +31,7 @@ def database_entries():
     db = get_db()
     cursor = db.cursor()
     cursor.execute("SELECT * FROM database")
-    entries = cursor.fetchall
+    entries = cursor.fetchall()
     return render_template('database_entries.html', entries=entries)
 
 @app.route("/database/create", methods=["GET", "POST"])

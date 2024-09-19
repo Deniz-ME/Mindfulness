@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Your Entries</h1>
+{% if entries %}
+    <ul>
+        {% for entry in entries %}
+        <li>
+            <h2>{{ entry[1] }}</h2>
+            <p>{{ entry[2] }}</p>
+            <small>{{ entry[3] }}</small>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No diary entries found.</p>
+{% endif %}
+{% endblock %}
