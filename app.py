@@ -66,6 +66,14 @@ def update(id):
     return render_template("update.html", entry = entry)
 
 
+@app.route("/database/delete/<int:id>", methods=["POST"])
+def delete(id):
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute("DELETE FROM database WHERE id = ?", (id,))
+    db.commit()
+    return redirect(url_for("database_entries"))
+
 if __name__ == '__main__':
     init_db()
     app.run(debug=True)
