@@ -1,3 +1,4 @@
+/* CSS for the whole body. */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -9,19 +10,22 @@ body {
 h1 {
     color: #333;
 }
+/* CSS for the navigation bar */
 nav {
     background-color: #333;
     padding: 10px;
 }
+/* CSS for the navigation bar letters*/
 nav a {
     color: white;
     margin-right: 10px;
     text-decoration: none;
 }
+/* CSS for the navigation bar, change of colors when hovering over it*/
 nav a:hover {
     text-decoration: underline;
 }
-
+/* CSS for the containers, so CSS for the foundational layout block for input forms or sections.*/
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -30,22 +34,25 @@ nav a:hover {
     box-shadow: 10px 10px 10px rgb(78, 71, 71);
 }
 
+/* CSS for the lay out of the input forms */
 form label {
     display: block;
     margin: 15px 0 5px;
 }
 
+/* CSS for the look of the input form title*/
 form input[type="text"] {
     width: 94.8%;
     padding: 10px;
     margin-bottom: 10px;
 }
+/* CSS for the look of the input form title*/
 form textarea {
     width: 95%;
     padding: 10px;
     margin-bottom: 10px;
 }
-
+/* CSS for the look of the buttons*/
 form button {
     padding: 10px 20px;
     background-color: #333;
@@ -55,6 +62,7 @@ form button {
     cursor: pointer;
 }
 
+/* CSS for the look of the button when hovering over it*/
 form button:hover {
     background-color: #555;
 }
