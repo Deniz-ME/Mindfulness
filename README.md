@@ -1,1 +1,2 @@
 # Mindfulness
+I made this API because I wanted to create an online diary where users can write down their thoughts, reflect on them, and look back at them over time. This tool is designed to promote mindfulness and self-reflection, providing a simple yet powerful way to capture moments of thought. Whether for daily journaling or simply writing down thoughts when inspiration strikes, this API serves as a personal mental archive that encourages reflection and growth.
