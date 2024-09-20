@@ -23,4 +23,13 @@ nav a:hover {
     color: rgb(149, 150, 205);
 }
 
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 10px 10px 10px rgb(78, 71, 71);
+}
+
+
           
