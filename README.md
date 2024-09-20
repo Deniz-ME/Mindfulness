@@ -10,3 +10,4 @@ How to use this API:
 6. Run python app.py
 7. Then this will pop up and you can click the link![image](https://github.com/user-attachments/assets/096d2c64-0027-4c24-b14c-62284607a00a)
 8. As last, get ready to write down your thoughts or to do list!
+Thank you for using my api, and I hope it benefits you!
