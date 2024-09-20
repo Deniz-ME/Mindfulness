@@ -35,7 +35,12 @@ form label {
     margin: 15px 0 5px;
 }
 
-form input[type="text"], form textarea {
+form input[type="text"] {
+    width: 94.8%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+form textarea {
     width: 95%;
     padding: 10px;
     margin-bottom: 10px;
